@@ -1,0 +1,76 @@
+import csv
+
+def Push():
+    
+    a1=0
+    f1=open("F:\\Fenris 30\\hostel record.csv","w")
+    w=csv.writer(f1)
+    h=w.writerow(["DEPT ID:","NAME","CITY"])
+    while True:
+        
+        d=int(input("Enter the department no:"))
+        n=input("Enter the Name of the employee:")
+        c=input("Enter the city:")
+        b=int(input("Enter 5 to break:"))
+        r=[d,n,c]
+        w.writerow(r)
+        print("record inserted")
+        
+        if b==5:
+            break
+        
+def display():
+     f2=open("F:\\Fenris 30\\hostel record.csv",newline="\r\n")
+     re=csv.reader(f2)
+     
+     for i in re:
+         print(i)
+         
+         
+         
+     f2.close()    
+
+def search():
+    a3=0
+    f3=open("F:\\Fenris 30\\hostel record.csv",newline="\r\n")
+    se=csv.reader(f3)
+    while True:
+        
+        di=input("Enter the department id to search:")
+        
+        
+        for i in se:
+            z=i[0]
+            n=i[1]
+            k=i[2]
+            if z==di:
+                 print("id found")
+                 print("the name ",n,"the city",k)
+                 
+            else:
+                 print("")
+        c9=int(input("enter 5 to stop searching:"))
+        if c9==5:
+            break
+    f3.close()
+            
+a=0
+while True:
+    print("1.PUSH")
+    print('2.DISPLAY')
+    print("3.SEARCH")
+    print("4.EXIT")
+    
+    ch=int(input("enter the choice:"))
+    
+    if ch==1:
+        Push()
+    elif ch==2:
+        display()
+    elif ch==3:
+        search()
+    elif ch==4:
+        break
+    else :
+        print("INVALID CHOICE,enter the correct one")
+        
