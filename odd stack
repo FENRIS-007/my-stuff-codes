@@ -1,0 +1,52 @@
+def push(stck,item0):
+    if item0%2==0:
+        print("only odd Numbers can be entered")
+    else:
+        stck.append(item0)
+        top=len(stck)-1
+        
+def display(stck):
+    if len(stck)==0:
+        print("empty")
+    else:
+        top=len(stck)-1
+    while top>=0:
+        print(stck[top])
+        top=top-1
+        
+
+def largest(stck):
+    if len(stck)==0:
+        print("stack is empty")
+    else:
+        print(max(stck),"<----largest")
+
+stack=[]
+top=None
+
+print("1.PUSH")
+print("2.LARGEST")
+print("2.DISPLAY")
+print("4.exit")
+while True:
+    print("")
+    ch=int(input('Enter the choice:'))
+    
+    if ch==1:
+        print("")
+        item=int(input("Enter the Element:"))
+        push(stack,item)
+    elif ch==2:
+        largest(stack)
+    elif ch==3:
+        display(stack)
+    elif ch==4:
+        print("OPERATION OVER")
+        break
+    else:
+        print("INVALID CHOICE NUMBER")
+        
+        
+    
+        
+        
