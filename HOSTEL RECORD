@@ -3,7 +3,7 @@ import csv
 def Push():
     
     a1=0
-    f1=open("F:\\Fenris 30\\hostel record.csv","w")
+    f1=open("D:\\file directory\\hostel record.csv","w")
     w=csv.writer(f1)
     h=w.writerow(["DEPT ID:","NAME","CITY"])
     while True:
@@ -20,7 +20,7 @@ def Push():
             break
         
 def display():
-     f2=open("F:\\Fenris 30\\hostel record.csv",newline="\r\n")
+     f2=open("D:\\file directory\\hostel record.csv",newline="\r\n")
      re=csv.reader(f2)
      
      for i in re:
@@ -32,10 +32,11 @@ def display():
 
 def search():
     a3=0
-    f3=open("F:\\Fenris 30\\hostel record.csv",newline="\r\n")
-    se=csv.reader(f3)
+   
     while True:
-        
+        f3=open("D:\\file directory\\hostel record.csv",newline="\r\n")
+        se=csv.reader(f3)
+         
         di=input("Enter the department id to search:")
         
         
@@ -49,6 +50,7 @@ def search():
                  
             else:
                  print("")
+
         c9=int(input("enter 5 to stop searching:"))
         if c9==5:
             break
@@ -73,4 +75,6 @@ while True:
         break
     else :
         print("INVALID CHOICE,enter the correct one")
+        
+
         
